@@ -39,7 +39,7 @@
 
 ## 5. Công cụ AI đã dùng
 
-- **Claude Code:** soạn nháp bảng khắc phục, `pilot_plan.yaml`, rà soát hồ sơ; viết script tính tay CP1. Không dùng AI để gắn nhãn: 20 nhãn do tôi tự gắn.
+- **Claude Code:** soạn nháp bảng khắc phục, `pilot_plan.yaml`, rà soát hồ sơ; viết script tính tay CP1.
 - **Tự kiểm tra:** so số với `lab13.py` và số đối chiếu trong hướng dẫn (lệch < 2%); chạy lại bằng pandas các tỉ lệ dùng cho luật dừng; `yaml.safe_load` không lỗi, không còn dấu `?`.
 
 ## 6. Tự đánh giá
