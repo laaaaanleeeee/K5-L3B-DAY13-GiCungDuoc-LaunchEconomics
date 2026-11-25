@@ -200,29 +200,33 @@ def co_mau(p1, p2, alpha=ALPHA, power=POWER):
     n = (z_{1-α/2}·√(2·p̄·(1−p̄)) + z_{1−β}·√(p1(1−p1) + p2(1−p2)))² ÷ (p2 − p1)²,  p̄ = (p1 + p2)/2
     Gợi ý: za = NormalDist().inv_cdf(1 - alpha / 2); zb = NormalDist().inv_cdf(power); math.ceil(...)
     Phép thử: co_mau(0.70, 0.75) ≈ 1.251 (z làm tròn 1,96/0,84 cho 1.250, vẫn trong sai số 2%)."""
-    # TODO CP4 (TV3): VIẾT Ở ĐÂY
-    raise NotImplementedError('VIẾT Ở ĐÂY')
+    za = NormalDist().inv_cdf(1 - alpha / 2)
+    zb = NormalDist().inv_cdf(power)
+    p_bar = (p1 + p2) / 2
+    tu = (za * math.sqrt(2 * p_bar * (1 - p_bar))
+          + zb * math.sqrt(p1 * (1 - p1) + p2 * (1 - p2))) ** 2
+    return math.ceil(tu / (p2 - p1) ** 2)
 
 
 def he_so_thiet_ke(m, icc=ICC):
     """Hệ số thiết kế DE = 1 + (m − 1) × ICC, m = số yêu cầu mỗi cụm."""
-    # TODO CP4 (TV3): VIẾT Ở ĐÂY
-    raise NotImplementedError('VIẾT Ở ĐÂY')
+    return 1 + (m - 1) * icc
 
 
 def n_hieu_dung(c, m, icc=ICC):
     """Cỡ mẫu hiệu dụng khi chia theo cụm: c × m ÷ DE (c = số cụm mỗi nhóm).
     Luôn nhỏ hơn giới hạn c ÷ ICC, dù m lớn bao nhiêu."""
-    # TODO CP4 (TV3): VIẾT Ở ĐÂY
-    raise NotImplementedError('VIẾT Ở ĐÂY')
+    return c * m / he_so_thiet_ke(m, icc)
 
 
 def m_toi_thieu(c, n_can, icc=ICC):
     """Câu e: số yêu cầu tối thiểu mỗi cụm để c × m ÷ (1 + (m − 1)·ICC) ≥ n_can.
     Giải tay: c·m ≥ n_can·(1 − ICC + ICC·m) → m ≥ n_can·(1 − ICC) ÷ (c − n_can·ICC), làm tròn lên.
     Nếu c − n_can·ICC ≤ 0 thì không m nào đủ (n_can ≥ c ÷ ICC)."""
-    # TODO CP4 (TV3): VIẾT Ở ĐÂY
-    raise NotImplementedError('VIẾT Ở ĐÂY')
+    mau = c - n_can * icc
+    if mau <= 0:
+        raise ValueError(f'Không m nào đủ: n_can {n_can} ≥ c ÷ ICC = {c / icc:,.0f}')
+    return math.ceil(n_can * (1 - icc) / mau)
 
 
 def in_d1():
