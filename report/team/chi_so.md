@@ -35,5 +35,5 @@ Viết "chỉ số trong đợt chạy thử là …", không viết "trợ lý 
 
 | Rủi ro | Tác động đã tính | Dấu hiệu theo dõi | Hành động | Người phụ trách |
 | --- | --- | --- | --- | --- |
-| ... | ... | ... | ... | ... |
-| ... | ... | ... | ... | ... |
+| Số ca làm lại tăng (+51,8%) | Làm lại gấp đôi: chi phí mỗi việc thành công 4.472 đ → 6.787 đ (+51,8%), yếu tố mạnh nhất trong bảng B1 và B2 [simulated] | Tỉ lệ yêu cầu `ket_qua = lam_lai`, hiện 74/1.200 = 6,2%. Theo dõi hằng tuần; vượt 8% hai tuần liên tiếp là cảnh báo | Tạm dừng nhận thêm loại yêu cầu có tỉ lệ làm lại cao nhất, xem lại các ca làm lại để tìm nguyên nhân gốc | Chủ sản phẩm trợ lý |
+| Phải xem lại gần hết yêu cầu (0,98×) | Xem lại 100% cho `noi_dia` + `hang_nang`: 11.743 đ/việc = 0,98× của 12.000 đ, trợ lý gần như không tiết kiệm; hoà vốn khi mỗi lần xem lại ≤ 5,1 phút (làm lại 9 phút) [simulated] | Tỉ lệ yêu cầu được xem lại, hiện 177/1.200 = 14,8%; và số phút xem lại trung bình mỗi ca. Vượt 30% hoặc quá 5 phút/ca là cảnh báo | Giữ xem lại theo mẫu thay vì xem lại toàn bộ; dừng mở rộng nếu chi phí mỗi việc thành công vượt 0,9× của 12.000 đ | Trưởng vận hành CSKH |
