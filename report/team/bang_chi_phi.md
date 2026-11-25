@@ -32,10 +32,10 @@ Số tính bằng `src/lab13.py`. Mọi con số tính từ cột `_simulated` g
 
 | Loại | Số yêu cầu | Tỉ lệ thành công | Số lần chạy mỗi yêu cầu | Chi phí mỗi việc thành công | So với 12.000 đ |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| noi_dia | 824 | 95,0% | 1,11 | 2.696 đ [simulated] | 0,22× |
-| hang_nang | 158 | 74,1% | 1,47 | 8.221 đ [simulated] | 0,69× |
-| quoc_te | 150 | 27,3% | 2,32 | 22.515 đ [simulated] | 1,88× |
-| doi_tac | 68 | 54,4% | 1,88 | 10.215 đ [simulated] | 0,85× |
+| noi_dia | 824 | 95,0% | 1,11 | 2.696 đ [simulated] | 0,22× [simulated] |
+| hang_nang | 158 | 74,1% | 1,47 | 8.221 đ [simulated] | 0,69× [simulated] |
+| quoc_te | 150 | 27,3% | 2,32 | 22.515 đ [simulated] | 1,88× [simulated] |
+| doi_tac | 68 | 54,4% | 1,88 | 10.215 đ [simulated] | 0,85× [simulated] |
 
 - Loại nào không đáng để trợ lý xử lý? **quoc_te** (1,88× của 12.000 đ [simulated], chỉ 27,3% thành công). Chạy lại tới 3 lần **không giúp**: tỉ lệ ok lần 1 là 30,0%, lần 2 chỉ 11,4%, lần 3 chỉ 2,2%, lỗi lặp lại trên cùng yêu cầu nên chạy lại chỉ tốn thêm tiền.
 - doi_tac sát ngưỡng (0,85× [simulated], 54,4% thành công) và có điều khoản riêng, nên cũng để ngoài phạm vi pilot.
@@ -46,8 +46,8 @@ Trong phạm vi: tổng chi phí 3.072.513 đ / 900 việc thành công = 3.414 
 
 | Khối lượng | Việc thành công mỗi tháng | Chi phí cố định mỗi việc | Chi phí mỗi việc thành công + cố định | So với 12.000 đ |
 | --- | ---: | ---: | ---: | ---: |
-| 45.000 yêu cầu/tháng | 33.750 | 1.185 đ | 4.599 đ [simulated] | 0,38× |
-| Một nửa khối lượng | 16.875 | 2.370 đ | 5.784 đ [simulated] | 0,48× |
+| 45.000 yêu cầu/tháng | 33.750 | 1.185 đ | 4.599 đ [simulated] | 0,38× [simulated] |
+| Một nửa khối lượng | 16.875 | 2.370 đ | 5.784 đ [simulated] | 0,48× [simulated] |
 
 - Chi phí cố định có đổi kết luận không? **Không** ở quy mô đầy đủ (0,38×) hay nửa khối lượng (0,48×) [simulated], nhưng cố định tăng gấp đôi lên 2.370 đ/việc khi khối lượng giảm một nửa, nên hồ sơ phải ghi rõ số đã cộng cố định và ở khối lượng nào.
 
