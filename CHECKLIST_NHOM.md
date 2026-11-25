@@ -30,7 +30,7 @@ Vai: **TV1** = viết code + kiểm số · **TV2** = gắn nhãn 1 + pilot_plan
 - [x] **TV1:** Điền B1–B4 vào `bang_chi_phi.md` và xếp hạng 3 yếu tố mạnh nhất.
 - [x] **TV1:** Tự kiểm tra: "giảm một nửa" phải bằng nửa mức tăng của "gấp đôi".
 - [ ] **TV1, TV3:** Mỗi câu trả lời không quá 3 dòng và có số.
-- [ ] **TV1:** Bàn giao cho TV3 (xem mục "Bàn giao đổi người code" ngay dưới).
+- [x] **TV1:** Bàn giao cho TV3 (xem mục "Bàn giao đổi người code" ngay dưới).
 
 ## Bàn giao đổi người code (giờ giải lao 15:20–15:35)
 - [ ] **TV1:** Chạy `python lab13.py`, ba phép thử ĐẠT. Commit và push `lab13.py` (ví dụ `feat: CP1-CP2 xong`) và đảm bảo A2–A4, B1–B4 đã điền trong `bang_chi_phi.md`.
@@ -38,7 +38,7 @@ Vai: **TV1** = viết code + kiểm số · **TV2** = gắn nhãn 1 + pilot_plan
 - [ ] **TV2:** `git pull` và chạy `lab13.py` trên máy mình, ba phép thử ĐẠT, để có hai người ngoài TV1 chạy được code.
 - [ ] **TV3:** Tự đọc `mo_hinh()` và trả lời không nhìn đáp án: vì sao tử số tính mọi lần chạy còn mẫu số chỉ đếm `thanh_cong`; tham số nào là giá, tham số nào là hệ số; chi phí cố định 40 triệu/tháng cộng vào đâu.
 - [ ] **TV3:** Tự tay tính lại một con số (ví dụ chi phí mỗi việc thành công của một `loai`) và so khớp với `mo_hinh()`.
-- [ ] **TV1:** Chuyển sang vai kiểm số: ngồi cạnh trả lời câu hỏi, sau đó đối chiếu kết quả D1 với slide đáp án.
+- [x] **TV1:** Chuyển sang vai kiểm số: ngồi cạnh trả lời câu hỏi, sau đó đối chiếu kết quả D1 với slide đáp án.
 - [ ] **Cả 3:** Nếu máy ai không chạy được Python, ghi lệnh và output vào mục 5 của `group_report.md`.
 
 ## CP3 · C: Bảng lỗi (15:35–16:08)
@@ -51,7 +51,7 @@ Vai: **TV1** = viết code + kiểm số · **TV2** = gắn nhãn 1 + pilot_plan
 
 ## CP4 · D: pilot_plan.yaml (16:08–16:36)
 - [ ] **TV3 (người code mới):** Viết D1 ở dòng `TODO CP4` trong `lab13.py` và tính 5 câu: cỡ mẫu theo yêu cầu, theo nhân viên, theo depot, mức chênh 6 điểm. Commit bằng tài khoản git của TV3.
-- [ ] **TV1 (kiểm số):** Đối chiếu kết quả D1 với slide đáp án và tính tay một con số.
+- [x] **TV1 (kiểm số):** Đối chiếu kết quả D1 với slide đáp án và tính tay một con số.
 - [ ] **TV2:** Trả lời 5 câu D2 "tách được tác động".
 - [ ] **TV2:** Tính tỉ lệ `mo_lai_trong_7_ngay` hiện tại trước khi đặt luật an toàn.
 - [ ] **TV2:** Điền mọi dấu `?` trong `pilot_plan.yaml`. Ghi kết quả D1 và D2 vào chú thích đầu file.
@@ -62,7 +62,7 @@ Vai: **TV1** = viết code + kiểm số · **TV2** = gắn nhãn 1 + pilot_plan
 ## CP5 · E: Chỉ số, rủi ro, hồ sơ (16:36–17:00)
 - [ ] **TV3:** Tính thử 3 chỉ số (chính, dùng, an toàn) và đề xuất thêm 1 chỉ số dùng, 1 chỉ số an toàn.
 - [ ] **TV3:** Liệt kê ≥ 6 event có `trace_id` trong `chi_so.md`.
-- [ ] **TV1:** Cấp số cho ≥ 2 dòng rủi ro kinh tế lấy từ bảng độ nhạy.
+- [x] **TV1:** Cấp số cho ≥ 2 dòng rủi ro kinh tế lấy từ bảng độ nhạy.
 - [ ] **TV3:** Chốt `ho_so_launch_v0.md`: 1 trang, đủ 7 mục. Mỗi mục có con số chính, trạng thái (Xong, có bằng chứng · Chưa · Giả lập) và người phụ trách là một vai trò. Dòng cuối là đề xuất Go, Go có điều kiện hoặc No-go.
 - [ ] **TV2:** Rà soát: `grep -rni production report/team` không in gì, mọi số giả lập có nhãn `simulated`, phạm vi đã thu hẹp có lý do bằng số.
 - [ ] **Cả 3:** Gửi hồ sơ cho nhóm hội đồng lúc 17:00.
