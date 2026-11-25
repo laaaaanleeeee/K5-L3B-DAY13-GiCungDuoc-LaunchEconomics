@@ -23,12 +23,12 @@ Vai: **TV1** = viết code + kiểm số · **TV2** = gắn nhãn 1 + pilot_plan
 - [ ] **Cả 3:** Hiểu được vì sao tử số tính mọi lần chạy còn mẫu số chỉ đếm `thanh_cong`.
 
 ## CP2 · B: Bảng độ nhạy (14:53–15:20)
-- [ ] **TV1:** Chạy 9 kịch bản đổi từng yếu tố (B1).
-- [ ] **TV1:** Chạy 1 kịch bản đổi một cặp (B2).
-- [ ] **TV1:** Chạy giới hạn 1/2/3 lần và tính chi phí cả hệ thống (B3).
-- [ ] **TV1:** Chạy kịch bản xem lại 100% cho `noi_dia` + `hang_nang` (B4).
-- [ ] **TV1:** Điền B1–B4 vào `bang_chi_phi.md` và xếp hạng 3 yếu tố mạnh nhất.
-- [ ] **TV1:** Tự kiểm tra: "giảm một nửa" phải bằng nửa mức tăng của "gấp đôi".
+- [x] **TV1:** Chạy 9 kịch bản đổi từng yếu tố (B1).
+- [x] **TV1:** Chạy 1 kịch bản đổi một cặp (B2).
+- [x] **TV1:** Chạy giới hạn 1/2/3 lần và tính chi phí cả hệ thống (B3).
+- [x] **TV1:** Chạy kịch bản xem lại 100% cho `noi_dia` + `hang_nang` (B4).
+- [x] **TV1:** Điền B1–B4 vào `bang_chi_phi.md` và xếp hạng 3 yếu tố mạnh nhất.
+- [x] **TV1:** Tự kiểm tra: "giảm một nửa" phải bằng nửa mức tăng của "gấp đôi".
 - [ ] **TV1, TV3:** Mỗi câu trả lời không quá 3 dòng và có số.
 - [ ] **TV1:** Bàn giao cho TV3 (xem mục "Bàn giao đổi người code" ngay dưới).
 
