@@ -73,3 +73,26 @@ Báo cáo đầy đủ: [report/team/2A202603934_NguyenThanhNam.md](report/team/
 
 - Commit: `63188b8`, `e48ca47`, `c6bc353`, `b55c0d0`, `2d21416`.
 - File: `report/team/bang_loi.md`, `report/team/pilot_plan.yaml`, `report/team/2A202603934_NguyenThanhNam.md`.
+
+## TranTungLam-2A202603893
+
+Báo cáo đầy đủ: [report/team/2A202603893_TranTungLam.md](report/team/2A202603893_TranTungLam.md)
+
+### Phần việc phụ trách
+
+- TV1: người viết code trước giờ giải lao (CP1, CP2), người kiểm số sau giờ giải lao.
+- CP1–CP2: viết A1–A4, B1–B4 trong `src/lab13.py`; điền `report/team/bang_chi_phi.md`.
+- CP3: bàn giao code cho TV3, dựng sẵn khung D1. CP4: kiểm số D1. CP5: cấp số cho rủi ro kinh tế trong `chi_so.md`.
+
+### Đóng góp cụ thể
+
+- CP1: ba phép thử A1 ĐẠT (1,20 · 1,25 · 1,25); `mo_hinh()` cho chi phí mỗi việc thành công 4.472 đ, gấp 16,3 lần hoá đơn token chia số yêu cầu [simulated]; A3 theo loại (quoc_te 1,88×, chạy lại không giúp: ok 30,0% → 11,4% → 2,2%); A4 cộng cố định 4.599 đ = 0,38× [simulated].
+- CP2: B1 đủ 9 kịch bản, có `assert` tự kiểm "giảm một nửa = −½ gấp đôi"; xếp hạng làm lại (+51,8%) · xem lại (+40,7%) · lương (+23,1%); B3 giới hạn 2 lần rẻ nhất cho công ty; B4 xem lại 100% là 11.743 đ = 0,98×, hoà vốn ≤ 5,1 phút [simulated].
+- CP3: khung D1 (hằng số, công thức, `in_d1()` in 5 câu), script vẫn chạy hết khi D1 chưa viết.
+- CP4: đối chiếu 5 câu D1 của TV3 và chú thích D1 trong `pilot_plan.yaml` với đáp án (1.251 · 3.103 / 42 người · 1.000 · 300 · m ≥ 299), tính tay câu b và câu e.
+- CP5: rủi ro kinh tế trong `chi_so.md`: tỉ lệ làm lại trong phạm vi 48/982 = 4,9% (ngưỡng 7%), phút xem lại TB 5,0 phút sát hoà vốn 5,1 phút, thêm dòng rủi ro khối lượng thấp (0,48× khi còn nửa khối lượng) [simulated].
+
+### Bằng chứng
+
+- Commit: `4138ac2`, `87cf98a`, `f22e2c8`, `3faa529`, `77c3c87`.
+- File: `src/lab13.py`, `report/team/bang_chi_phi.md`, `report/team/chi_so.md`, `report/team/2A202603893_TranTungLam.md`.
