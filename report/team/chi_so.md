@@ -4,13 +4,13 @@
 
 | Loại | Chỉ số | Công thức | Tính thử trên 1.200 yêu cầu |
 | --- | --- | --- | --- |
-| Chính (kết quả) | % yêu cầu đóng trong 24 giờ và không mở lại trong 7 ngày | `dong_trong_24h` bằng 1 và `mo_lai_trong_7_ngay` bằng 0, chia tổng số yêu cầu | ... |
-| Dùng | Tỉ lệ bỏ qua gợi ý | `quyet_dinh_xem_lai` là `sua` hoặc `bo`, chia số yêu cầu được xem lại | ... |
-| An toàn | Tỉ lệ lỗi lọt đến khách | `mo_lai_trong_7_ngay` bằng 1, chia tổng số yêu cầu | ... |
-| Dùng | Nhóm tự đề xuất: ... | ... | Không cần tính |
-| An toàn | Nhóm tự đề xuất: ... | ... | Không cần tính |
+| Chính (kết quả) | % yêu cầu đóng trong 24 giờ và không mở lại trong 7 ngày | `dong_trong_24h` bằng 1 và `mo_lai_trong_7_ngay` bằng 0, chia tổng số yêu cầu | 994 / 1.200 = **82,8%** |
+| Dùng | Tỉ lệ bỏ qua gợi ý | `quyet_dinh_xem_lai` là `sua` hoặc `bo`, chia số yêu cầu được xem lại | (41 + 7) / 177 = 48 / 177 = **27,1%** |
+| An toàn | Tỉ lệ lỗi lọt đến khách | `mo_lai_trong_7_ngay` bằng 1, chia tổng số yêu cầu | 51 / 1.200 = **4,25%** |
+| Dùng | Nhóm tự đề xuất: phút xem lại trung bình mỗi yêu cầu được xem lại [simulated] | tổng `phut_xem_lai_simulated` ÷ số yêu cầu có `duoc_xem_lai` bằng 1 | Không cần tính |
+| An toàn | Nhóm tự đề xuất: số yêu cầu bị hoàn trùng trong 24 giờ | số `request_id` có từ 2 event `refund_created` trở lên trong 24 giờ, đếm mỗi ngày; ngưỡng > 0 | Không cần tính |
 
-Viết "chỉ số trong đợt chạy thử là …", không viết "trợ lý đã nâng chỉ số": đợt chạy thử không có nhóm đối chứng.
+Viết "chỉ số trong đợt chạy thử là …", không viết "trợ lý đã nâng chỉ số": đợt chạy thử không có nhóm đối chứng. Con số 82,8% là chỉ số trong đợt chạy thử, không so được với mức 0,70 của nhóm chỉ có nhân viên. Ba chỉ số đầu tính từ cột không có đuôi `_simulated`; chỉ số dùng do nhóm đề xuất dùng cột giả lập nên có nhãn `simulated`.
 
 ## Danh sách event
 
@@ -18,16 +18,24 @@ Viết "chỉ số trong đợt chạy thử là …", không viết "trợ lý 
 
 | Event | Ai tạo | Thuộc tính chính | Thời điểm |
 | --- | --- | --- | --- |
-| ... | ... | ..., trace_id | ... |
-| ... | ... | ..., trace_id | ... |
-| ... | ... | ..., trace_id | ... |
-| ... | ... | ..., trace_id | ... |
-| ... | ... | ..., trace_id | ... |
-| ... | ... | ..., trace_id | ... |
+| `request_received` | Cổng tiếp nhận yêu cầu | request_id, depot, staff_id, loai, so_tien_vnd, trace_id | Khi khách gửi yêu cầu |
+| `agent_run_completed` | Trợ lý | request_id, attempt, tokens_in, tokens_out, tool_calls, status, trace_id | Cuối mỗi lần chạy của trợ lý |
+| `refund_calculated` | Trợ lý | request_id, so_tien_hoan, price_table_version, trace_id | Khi trợ lý tính xong số tiền hoàn |
+| `refund_created` | Sổ cái hoàn tiền | request_id, ma_van_don, so_tien_hoan, trace_id | Khi lệnh hoàn được ghi vào sổ cái |
+| `review_decision` | Nhân viên CSKH | request_id, staff_id, quyet_dinh_xem_lai (`giu`, `sua`, `bo`), phut_xem_lai, trace_id | Khi nhân viên bấm quyết định xem lại |
+| `handoff_to_staff` | Trợ lý | request_id, ly_do, so_lan_chay, trace_id | Khi chạy hết 3 lần vẫn lỗi hoặc ngoài phạm vi |
+| `request_closed` | Hệ thống | request_id, ket_qua (`thanh_cong`, `lam_lai`, `chuyen_nhan_vien`), thoi_diem_dong, trace_id | Khi yêu cầu được đóng |
+| `request_reopened` | Khách hoặc nhân viên CSKH | request_id, ly_do, so_ngay_sau_khi_dong, trace_id | Khi yêu cầu bị mở lại trong 7 ngày |
+
+Các event dùng trong cách phát hiện ở `bang_loi.md` (`bank_refund_rejected`, `intent_classified`, `out_of_scope_notice`) cũng gắn `trace_id` và được thêm vào danh sách khi triển khai pilot.
 
 **Kiểm tra chéo:** với mỗi chỉ số ở bảng E1, ghi event dùng để tính. Chỉ số nào không tính được từ danh sách event thì chưa đo được.
 
-- ...
+- Chỉ số chính: `request_received` và `request_closed` (hiệu thời điểm ≤ 24 giờ), `request_reopened` (không có event nào trong 7 ngày). Đo được.
+- Tỉ lệ bỏ qua gợi ý: `review_decision` (đếm `sua` và `bo` chia tổng số event). Đo được.
+- Tỉ lệ lỗi lọt đến khách: `request_reopened` chia số `request_closed`. Đo được; lưu ý "mở lại" chỉ là dấu hiệu gần đúng của lỗi lọt đến khách, không phải mọi ca mở lại đều do lỗi trợ lý.
+- Phút xem lại trung bình [simulated]: `review_decision` (thuộc tính `phut_xem_lai`). Đo được.
+- Yêu cầu bị hoàn trùng: `refund_created` đếm theo `ma_van_don` trong 24 giờ. Đo được.
 
 ## E2 · Rủi ro kinh tế
 
