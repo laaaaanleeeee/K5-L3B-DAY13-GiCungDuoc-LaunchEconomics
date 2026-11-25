@@ -36,6 +36,20 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 
 Sao chép mục dưới đây cho từng thành viên.
 
+## HoVaTen-MSSV
+
+### Phần việc phụ trách
+
+-
+
+### Đóng góp cụ thể
+
+-
+
+### Bằng chứng
+
+-
+
 ## NguyenThanhNam-2A202603934
 
 Báo cáo đầy đủ: [report/team/2A202603934_NguyenThanhNam.md](report/team/2A202603934_NguyenThanhNam.md)
@@ -59,17 +73,3 @@ Báo cáo đầy đủ: [report/team/2A202603934_NguyenThanhNam.md](report/team/
 
 - Commit: `63188b8`, `e48ca47`, `c6bc353`, `b55c0d0`, `2d21416`.
 - File: `report/team/bang_loi.md`, `report/team/pilot_plan.yaml`, `report/team/2A202603934_NguyenThanhNam.md`.
-
-## HoVaTen-MSSV
-
-### Phần việc phụ trách
-
--
-
-### Đóng góp cụ thể
-
--
-
-### Bằng chứng
-
--
