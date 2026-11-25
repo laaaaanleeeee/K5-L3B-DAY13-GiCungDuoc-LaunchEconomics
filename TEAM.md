@@ -2,10 +2,10 @@
 
 ## Thông tin nhóm
 
-- Tên nhóm:
-- Lớp: L3A hoặc L3B
-- Repo nhóm: `K5-L3A-DAY13-TenNhom-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt:
+- Tên nhóm: GiCungDuoc
+- Lớp: L3B
+- Repo nhóm: `K5-L3B-DAY13-GiCungDuoc-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
+- URL repo, nhánh nộp, commit chốt: https://github.com/laaaaanleeeee/K5-L3B-DAY13-GiCungDuoc-LaunchEconomics · nhánh `main` · commit chốt: điền sau lần push cuối
 
 ## Thành viên
 
@@ -36,19 +36,28 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 
 Sao chép mục dưới đây cho từng thành viên.
 
-## HoVaTen-MSSV
+## LeHaiLan-2A202603915
+
+Báo cáo đầy đủ: [report/team/2A202603915_LeHaiLan.md](report/team/2A202603915_LeHaiLan.md)
 
 ### Phần việc phụ trách
 
--
+- Người gắn nhãn 2, kiêm giữ hồ sơ `report/team/ho_so_launch_v0.md` (TV3); người viết code sau giờ giải lao.
+- CP3: gắn nhãn độc lập 20 ca. CP4: viết bốn hàm D1 trong `src/lab13.py`.
+- CP5: `chi_so.md` (E1, event, kiểm tra chéo), chốt hồ sơ launch v0, phiếu chấm duyệt chéo.
 
 ### Đóng góp cụ thể
 
--
+- Bàn giao: chạy `lab13.py` trên máy mình, ba phép thử ĐẠT; các bảng A2–B4 khớp số đối chiếu.
+- CP3: bộ nhãn người 2; đồng thuận 16/20 = 80%; 4 ca lệch (8, 11, 12, 17).
+- CP4: D1 gồm 1.251 · DE 2,48 / 3.103 / 42 người (không đủ 40) · 1.000 · 300 · 859, m ≥ 299.
+- CP5: ba chỉ số tính thử 82,8% · 27,1% · 4,25% (đợt chạy thử, không đối chứng); 8 event có `trace_id`; hồ sơ bảy mục, đề xuất Go có điều kiện kèm số bất lợi (0,98× khi xem lại 100% [simulated]).
+- Duyệt chéo: chấm nhóm GREEN, quyết định Go có điều kiện.
 
 ### Bằng chứng
 
--
+- Commit: `895d8df`, `5622954`, `fcaab88`, `eb6cb9c`.
+- File: `src/lab13.py` (D1), `report/team/chi_so.md`, `report/team/ho_so_launch_v0.md`, `report/team/phieu_cham.md`, `report/team/2A202603915_LeHaiLan.md`.
 
 ## NguyenThanhNam-2A202603934
 
