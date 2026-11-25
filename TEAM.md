@@ -11,8 +11,8 @@
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 |        |      |       |        |         |
-|   2 | Nguyễn Thành Nam | 2A202603934 | ishodajo@gmail.com | Ishodayo | TV2 · Người gắn nhãn 1 (kiêm viết pilot_plan.yaml) |
+|   1 |    Lê Hải Lân    |  2A202603915    |  lehailan110@gmail.com     |  laaaaanleeeee      |  Người viết code + kiểm số        |
+|   2 | Nguyễn Thành Nam | 2A202603934 | ishodajo@gmail.com | Ishodayo |  Người gắn nhãn 1 (kiêm viết pilot_plan.yaml) |
 |   3 |        |      |       |        |         |
 |   4 |        |      |       |        |         |
 
