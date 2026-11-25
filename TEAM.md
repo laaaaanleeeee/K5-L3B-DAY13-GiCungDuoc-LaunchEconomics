@@ -11,10 +11,9 @@
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 |    Lê Hải Lân    |  2A202603915    |  lehailan110@gmail.com     |  laaaaanleeeee      |  Người viết code + kiểm số        |
+|   1 |    Lê Hải Lân    |  2A202603915    |  lehailan110@gmail.com     |  laaaaanleeeee      |  Người gắn nhãn 2, kiêm giữ hồ sơ        |
 |   2 | Nguyễn Thành Nam | 2A202603934 | ishodajo@gmail.com | Ishodayo |  Người gắn nhãn 1 (kiêm viết pilot_plan.yaml) |
-|   3 |        |      |       |        |         |
-|   4 |        |      |       |        |         |
+|   3 |    Trần Tùng Lâm    |   2A202603893   |    lamtt262004@gmail.com   |      lamtt262004   |    Người viết code + kiểm số     |
 
 Bốn vai của lab:
 
