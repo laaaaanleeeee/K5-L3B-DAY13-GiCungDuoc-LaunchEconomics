@@ -46,7 +46,7 @@ Vai: **TV1** = viết code + kiểm số · **TV2** = gắn nhãn 1 + pilot_plan
 - [ ] **TV2, TV3:** So nhãn và tính tỉ lệ đồng thuận (cần từ 16/20). Không sửa bộ nhãn độc lập sau khi so.
 - [ ] **TV2:** Với ca không trùng, thống nhất nhãn và ghi một câu quy tắc phân biệt.
 - [ ] **TV2:** Chọn 5 ca, mỗi loại một ca. Điền bảng khắc phục trong `bang_loi.md`, mỗi dòng có cách phát hiện đo được (event, ngưỡng, tần suất) và một vai trò phụ trách.
-- [ ] **TV1:** Hoàn thiện CP2 và viết sẵn khung D1 trong lúc hai người gắn nhãn (8 phút đầu, khoảng 15:35–15:43).
+- [x] **TV1:** Hoàn thiện CP2 và viết sẵn khung D1 trong lúc hai người gắn nhãn (8 phút đầu, khoảng 15:35–15:43).
 - [ ] **TV3:** Chỉ cầm bàn phím viết D1 **sau khi** đã gắn nhãn xong và so nhãn với TV2 (từ khoảng 15:43).
 
 ## CP4 · D: pilot_plan.yaml (16:08–16:36)

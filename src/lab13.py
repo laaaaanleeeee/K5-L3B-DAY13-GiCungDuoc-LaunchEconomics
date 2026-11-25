@@ -181,6 +181,81 @@ def xem_lai_toan_bo(runs, reqs, phut_xem=5, phut_lam_lai=9, luong_phut=LUONG_PHU
                 so_voi_baseline=tong / thanh_cong / BASELINE, phut_xem_hoa_von=hoa_von)
 
 
+# ---------- Nhiệm vụ D1 · Cỡ mẫu (KHUNG do TV1 dựng, TV3 viết thân hàm) ----------
+# Cho sẵn: baseline 0,70; mục tiêu +5 điểm; alpha 0,05; power 0,8; ICC 0,02.
+# Dùng statistics.NormalDist (thư viện chuẩn) nên không bắt buộc statsmodels.
+from statistics import NormalDist
+
+P1, P2 = 0.70, 0.75      # chỉ số chính hiện tại và mục tiêu (+5 điểm)
+ALPHA, POWER = 0.05, 0.80
+ICC = 0.02
+M_MOI_NHAN_VIEN = 75     # câu b: số yêu cầu mỗi nhân viên trong đợt pilot
+SO_NHAN_VIEN = 40        # tổng nhân viên CSKH
+NV_MOI_NHOM = 20         # câu c, e
+DEPOT_MOI_NHOM = 6       # câu d
+
+
+def co_mau(p1, p2, alpha=ALPHA, power=POWER):
+    """Cỡ mẫu mỗi nhóm khi so hai tỉ lệ (làm tròn lên).
+    n = (z_{1-α/2}·√(2·p̄·(1−p̄)) + z_{1−β}·√(p1(1−p1) + p2(1−p2)))² ÷ (p2 − p1)²,  p̄ = (p1 + p2)/2
+    Gợi ý: za = NormalDist().inv_cdf(1 - alpha / 2); zb = NormalDist().inv_cdf(power); math.ceil(...)
+    Phép thử: co_mau(0.70, 0.75) ≈ 1.251 (z làm tròn 1,96/0,84 cho 1.250, vẫn trong sai số 2%)."""
+    # TODO CP4 (TV3): VIẾT Ở ĐÂY
+    raise NotImplementedError('VIẾT Ở ĐÂY')
+
+
+def he_so_thiet_ke(m, icc=ICC):
+    """Hệ số thiết kế DE = 1 + (m − 1) × ICC, m = số yêu cầu mỗi cụm."""
+    # TODO CP4 (TV3): VIẾT Ở ĐÂY
+    raise NotImplementedError('VIẾT Ở ĐÂY')
+
+
+def n_hieu_dung(c, m, icc=ICC):
+    """Cỡ mẫu hiệu dụng khi chia theo cụm: c × m ÷ DE (c = số cụm mỗi nhóm).
+    Luôn nhỏ hơn giới hạn c ÷ ICC, dù m lớn bao nhiêu."""
+    # TODO CP4 (TV3): VIẾT Ở ĐÂY
+    raise NotImplementedError('VIẾT Ở ĐÂY')
+
+
+def m_toi_thieu(c, n_can, icc=ICC):
+    """Câu e: số yêu cầu tối thiểu mỗi cụm để c × m ÷ (1 + (m − 1)·ICC) ≥ n_can.
+    Giải tay: c·m ≥ n_can·(1 − ICC + ICC·m) → m ≥ n_can·(1 − ICC) ÷ (c − n_can·ICC), làm tròn lên.
+    Nếu c − n_can·ICC ≤ 0 thì không m nào đủ (n_can ≥ c ÷ ICC)."""
+    # TODO CP4 (TV3): VIẾT Ở ĐÂY
+    raise NotImplementedError('VIẾT Ở ĐÂY')
+
+
+def in_d1():
+    """In năm câu D1 để chép vào phần chú thích đầu report/team/pilot_plan.yaml."""
+    # a) Chia theo yêu cầu
+    n_a = co_mau(P1, P2)
+    print('\n=== D1 · Cỡ mẫu (baseline 0,70; +5 điểm; alpha 0,05; power 0,8; ICC 0,02) ===')
+    print(f'a) Chia theo yêu cầu: {n_a:,} yêu cầu mỗi nhóm')
+
+    # b) Chia theo nhân viên, m = 75 yêu cầu mỗi người
+    de_b = he_so_thiet_ke(M_MOI_NHAN_VIEN)
+    n_b = math.ceil(n_a * de_b)
+    nv_b = math.ceil(n_b / M_MOI_NHAN_VIEN)
+    print(f'b) Theo nhân viên, m = {M_MOI_NHAN_VIEN}: DE = {de_b:.2f}; n = {n_b:,} mỗi nhóm '
+          f'→ {nv_b} người mỗi nhóm, tổng {2 * nv_b} so với {SO_NHAN_VIEN} nhân viên '
+          f'({"đủ" if 2 * nv_b <= SO_NHAN_VIEN else "KHÔNG đủ người"})')
+
+    # c) 20 nhân viên mỗi nhóm: giới hạn trên c ÷ ICC
+    tran_c = NV_MOI_NHOM / ICC
+    print(f'c) {NV_MOI_NHOM} nhân viên mỗi nhóm: tối đa {tran_c:,.0f} '
+          f'({"đạt" if tran_c >= n_a else "KHÔNG đạt"} so với {n_a:,})')
+
+    # d) 6 depot mỗi nhóm
+    tran_d = DEPOT_MOI_NHOM / ICC
+    print(f'd) {DEPOT_MOI_NHOM} depot mỗi nhóm: tối đa {tran_d:,.0f}')
+
+    # e) Mức chênh 6 điểm, 20 nhân viên mỗi nhóm
+    n_e = co_mau(P1, P1 + 0.06)
+    m_e = m_toi_thieu(NV_MOI_NHOM, n_e)
+    print(f'e) Mức chênh 6 điểm: {n_e:,} mỗi nhóm; {NV_MOI_NHOM} người mỗi nhóm cần '
+          f'm ≥ {m_e} yêu cầu mỗi người (DE {he_so_thiet_ke(m_e):.2f})')
+
+
 if __name__ == '__main__':
     runs = pd.read_csv('logix_runs.csv')
     reqs = pd.read_csv('logix_requests.csv', keep_default_na=False)
@@ -273,6 +348,12 @@ if __name__ == '__main__':
               f"token+tool {b4['token_tool']:,.0f} đ; tổng {b4['tong']:,.0f} đ / "
               f"{b4['thanh_cong']} = {b4['cps']:,.0f} đ = {b4['so_voi_baseline']:.2f}×; "
               f"hoà vốn khi xem lại ≤ {b4['phut_xem_hoa_von']:.1f} phút")
-    # TODO CP4 · Nhiệm vụ D: cỡ mẫu.
+    # ----- D1 ----- (TODO CP4: TV3 viết thân 4 hàm co_mau, he_so_thiet_ke, n_hieu_dung, m_toi_thieu)
+    try:
+        in_d1()
+    except NotImplementedError:
+        print('\n=== D1 · chưa viết (TODO CP4 · TV3) ===')
+    # Tuỳ chọn, cần statsmodels: power thật nếu chọn mức chênh 6 điểm mà tác động chỉ 5 điểm.
     #   from statsmodels.stats.proportion import proportion_effectsize
     #   from statsmodels.stats.power import NormalIndPower
+    #   NormalIndPower().power(proportion_effectsize(0.75, 0.70), nobs1=859, alpha=0.05)  # ≈ 0,64
