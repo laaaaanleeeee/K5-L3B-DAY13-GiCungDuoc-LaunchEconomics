@@ -13,12 +13,12 @@ Vai: **TV1** = viết code + kiểm số · **TV2** = gắn nhãn 1 + pilot_plan
 - [ ] **TV3:** Mở sẵn `ho_so_launch_v0.md` để điền dần từ đầu buổi.
 
 ## CP1 · A: Mô hình chi phí (14:10–14:53)
-- [ ] **TV1:** Viết 3 hàm A1 ở dòng `TODO CP1`. Ba phép thử phải ĐẠT (1,20 · 1,25 · 1,25) rồi mới làm tiếp.
-- [ ] **TV1:** Viết `mo_hinh(runs, reqs, …)` (A2).
-- [ ] **TV1:** Chạy lại theo từng giá trị cột `loai` (A3).
-- [ ] **TV1:** Cộng chi phí cố định 40 triệu/tháng cho `noi_dia` + `hang_nang` (A4).
+- [x] **TV1:** Viết 3 hàm A1 ở dòng `TODO CP1`. Ba phép thử phải ĐẠT (1,20 · 1,25 · 1,25) rồi mới làm tiếp.
+- [x] **TV1:** Viết `mo_hinh(runs, reqs, …)` (A2).
+- [x] **TV1:** Chạy lại theo từng giá trị cột `loai` (A3).
+- [x] **TV1:** Cộng chi phí cố định 40 triệu/tháng cho `noi_dia` + `hang_nang` (A4).
 - [ ] **TV2, TV3:** Tính tay một con số để đối chiếu với TV1.
-- [ ] **TV1:** Điền bảng A2 (đủ 9 dòng, 2 dòng giả lập có nhãn `simulated`) và A3 (đủ 4 dòng) vào `bang_chi_phi.md`.
+- [x] **TV1:** Điền bảng A2 (đủ 9 dòng, 2 dòng giả lập có nhãn `simulated`) và A3 (đủ 4 dòng) vào `bang_chi_phi.md`.
 - [ ] **Cả 3:** Đối chiếu số với slide đáp án (lệch không quá 2%).
 - [ ] **Cả 3:** Hiểu được vì sao tử số tính mọi lần chạy còn mẫu số chỉ đếm `thanh_cong`.
 
